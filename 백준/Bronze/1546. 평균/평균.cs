@@ -15,12 +15,12 @@ namespace ConsoleApp1
         {
             double N = double.Parse(Console.ReadLine());
             double[] score = Array.ConvertAll(Console.ReadLine().Split(), double.Parse);
-            double[] zuzaks = new double[score.Length];
 
             double M = score.Max();
 
             double avg = 0;
 
+            double[] zuzaks = new double[score.Length];
             for (int i = 0; i < N; i++)
             {
                 zuzaks[i] = score[i] / M * 100;
@@ -33,7 +33,7 @@ namespace ConsoleApp1
 
             avg /= N;
 
-            Console.WriteLine(avg.ToString("0.0############################"));
+            Console.WriteLine(avg.ToString("0.0#####"));
 
         }
     }
