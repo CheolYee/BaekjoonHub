@@ -18,7 +18,6 @@ namespace ConsoleApp1
             int total = hights.Sum();
             int remove = total - 100;
 
-            List<int> seven = new List<int>();
             bool found = false;
 
             for (int i = 0; i < 8 && !found; i++)
@@ -27,21 +26,16 @@ namespace ConsoleApp1
                 {
                     if (hights[i] + hights[j] == remove)
                     {
-                        for (int k = 0; k < 9; k++)
-                        {
-                            if (k != i && k != j)
-                            {
-                                seven.Add(hights[k]);
-                            }
-                        }
+                        hights.RemoveAt(j);
+                        hights.RemoveAt(i);
                         found = true;
                     }
                 }
             }
 
-            seven.Sort();
+            hights.Sort();
 
-            foreach (int hight in seven)
+            foreach (int hight in hights)
             {
                 Console.WriteLine(hight);
             }
